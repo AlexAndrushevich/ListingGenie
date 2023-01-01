@@ -1,0 +1,28 @@
+{% extends 'dashboard_layout.html'%}
+
+{%block styles%}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+{%endblock%}
+
+{%block content%}
+<br>
+
+<h1> Account Details </h1>
+<br>  
+<h2> Hello, {{name}}</h2>
+<h2> Your token balance is: {{token_balance}} tokens.</h2>
+<br/>
+<form action="/checkout" method="GET">
+    <button type="submit" class="btn btn-outline-success" id="checkout-button">Add Tokens</button>
+  </form>
+  <br/>
+<form action="/logout" method="GET">
+    <button type="submit" class="btn btn-outline-danger" id="logout-button">Log Out</button>
+  </form>
+
+
+{%endblock%}
+
+{%block scripts%}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+{%endblock%}

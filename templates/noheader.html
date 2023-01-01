@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Listing-Genie AI{% endblock %}</title>
+  {% block styles %}
+
+  {% endblock %}
+</head>
+<body class="text-center">
+
+        
+  <main class="form-signin w-100 m-auto">
+    <br>
+    {% with messages = get_flashed_messages() %}
+  {% if messages %}
+
+    {% for message in messages %}
+    <div class="alert alert-warning alert-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+
+  {% endif %}
+{% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+  </div>
+  <footer>
+    <!-- Add footer content here -->
+  </footer>
+  {% block scripts %}
+
+  {% endblock %}
+ 
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+{% extends 'dashboard_layout.html'%}
+
+{%block styles%}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+{%endblock%}
+
+{%block content%}
+<br>
+
+<h1> Create Listing </h1>
+<br>  
+<h2> Generate bespoke listing descriptions in seconds</h2>
+<br/>
+<br/>
+<!-- Button to trigger the modal -->
+<div class="d-flex justify-content-center">
+<button type="button" class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#newListingModal">
+    New Listing
+  </button>
+</div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="newListingModal" tabindex="-1" role="dialog" aria-labelledby="newListingModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="newListingModalLabel">New Listing</h5>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+        <div class="modal-body">
+            <form method='POST'>
+<p> Fill in any of these fields -  only fill the information you have. We will take care of the rest.</p>
+            {{form.hidden_tag()}}
+            {{form.numberOfRooms.label(class='form-label')}}
+            {{form.numberOfRooms(class='form-control')}}
+            <br/>
+
+            {{form.numberOfFloors.label(class='form-label')}}
+            {{form.numberOfFloors(class='form-control')}}
+            <br/>
+
+            {{form.numberOfBedrooms.label(class='form-label')}}
+            {{form.numberOfBedrooms(class='form-control')}}
+            <br/>
+
+            {{form.numberOfSquareFeetOnPlot.label(class='form-label')}}
+            {{form.numberOfSquareFeetOnPlot(class='form-control')}}
+            <br/>
+
+            {{form.numberOfBuiltSquareFeet.label(class='form-label')}}
+            {{form.numberOfBuiltSquareFeet(class='form-control')}}
+            <br/>
+
+            {{form.houseCondition.label(class='form-label')}}
+            {{form.houseCondition(class='form-control')}}
+<br>
+            {{form.readinessToSell.label(class='form-label')}}
+            {{form.readinessToSell(class='form-control')}}
+<br>
+            {{form.listingAddress.label(class='form-label')}}
+            {{form.listingAddress(class='form-control')}}
+<br>
+            {{form.listingPrice.label(class='form-label')}}
+            {{form.listingPrice(class='form-control')}}
+<br>
+            {{form.listingPropertyHighlights.label(class='form-label')}}
+            {{form.listingPropertyHighlights(class='form-control')}}
+<br>
+            {{form.listingRentLicenseAvailable.label(class='form-label')}}
+            {{form.listingRentLicenseAvailable(class='form-control')}}
+<br>
+            {{form.listingIdealUse.label(class='form-label')}}
+            {{form.listingIdealUse(class='form-control')}}
+<br>
+            {{form.listingOpenHouseDates.label(class='form-label')}}
+            {{form.listingOpenHouseDates(class='form-control')}}
+<br>
+            {{form.listingAgentContactEmail.label(class='form-label')}}
+            {{form.listingAgentContactEmail(class='form-control')}}
+<br>
+            {{form.listingKeyWordsList.label(class='form-label')}}
+            {{form.listingKeyWordsList(class='form-control')}}
+<br>
+            {{form.listingToneOfVoice.label(class='form-label')}}
+            {{form.listingToneOfVoice(class='form-control')}}
+<br/>
+            {{form.submit(class='btn btn-danger')}}
+</form>
+</div>
+</div>
+</div>
+</div>
+
+
+{%endblock%}
+
+{%block scripts%}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+{%endblock%}

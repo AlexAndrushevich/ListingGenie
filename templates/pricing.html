@@ -1,0 +1,171 @@
+{% extends 'homepage_layout.html'%}
+
+{%block styles%}
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<link href="{{ url_for('static', filename='pricing.css') }}" rel="stylesheet">
+
+<style>
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  .b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
+
+  .b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+  }
+
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+
+  .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+  }
+
+  .nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+</style>
+{%endblock%}
+
+{%block content%}
+
+
+<h2 class="display-6 text-center">Our Prices</h2>
+<br>
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">Homeowner</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">$3.99<small class="text-muted fw-light">/mo</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>3 listing tokens / month</li>
+          <li>2 re-makes per listing</li>
+          <li>Email support</li>
+
+        </ul>
+        <button type="button" class="w-100 btn btn-lg btn-outline-primary">Get started</button>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">Agent</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title">$24.99<small class="text-muted fw-light">/mo</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>50 listing tokens / month</li>
+          <li>5 re-makes per listing</li>
+          <li>Priority email support</li>
+        </ul>
+        <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+      <div class="card-header py-3 text-bg-primary border-primary">
+        <h4 class="my-0 fw-normal">Brokerage</h4>
+      </div>
+      <div class="card-body">
+        <h1 class="card-title pricing-card-title"><small class="text-muted fw-light">On Request</small></h1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>Unlimited Listings</li>
+          <li>Unlimited Re-Rolls</li>
+          <li>Phone and priority email support</li>
+          <li>Custom Features on request</li>
+        </ul>
+        <a href="mailto:info@listing-genie.com" class="w-100 btn btn-lg btn-primary" role="button">Contact us</a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="table-responsive">
+  <table class="table text-center">
+    <thead>
+      <tr>
+        <th style="width: 34%;"></th>
+        <th style="width: 22%;">Homeowner</th>
+        <th style="width: 22%;">Agent</th>
+        <th style="width: 22%;">Brokerage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row" class="text-start">Listings</th>
+        <td><p style="width:24"> 3</p></td>
+        <td><p style="width:24"> 50</p></td>
+        <td><p style="width:24"> Unlimited</p></td>     
+       </tr>
+      <tr>
+        <th scope="row" class="text-start">Re-Makes</th>
+        <td><p style="width:24"> 2 / listing</p></td>
+        <td><p style="width:24"> 5 / listing</p></td>
+        <td><p style="width:24"> Unlimited</p></td>     
+      </tr>
+    </tbody>
+
+    <tbody>
+      <tr>
+        <th scope="row" class="text-start">Priority Support</th>
+        <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+        <td><img src = "{{ url_for('static', filename='check.svg') }}" alt="x" class="bi" width="24" height="24" ></td>
+        <td><img src = "{{ url_for('static', filename='check.svg') }}" alt="x" class="bi" width="24" height="24" ></td>
+      </tr>
+      <tr>
+        <th scope="row" class="text-start">Money-back guarantee</th>
+        <td><img src = "{{ url_for('static', filename='check.svg') }}" alt="x" class="bi" width="24" height="24" ></td>
+        <td><img src = "{{ url_for('static', filename='check.svg') }}" alt="x" class="bi" width="24" height="24" ></td>
+        <td><img src = "{{ url_for('static', filename='check.svg') }}" alt="x" class="bi" width="24" height="24" ></td>
+      </tr>
+    </tbody>
+  </table>
+<br>
+  <h2 class="display-6 text-center">Have any questions? <br/> Contact us at info@listing-genie.com</h2>
+</div>
+{%endblock%}
+
+{%block scripts%}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+{%endblock%}
